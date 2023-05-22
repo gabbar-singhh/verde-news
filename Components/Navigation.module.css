@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@400;700&display=swap");
+
+.Nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.5em 1em;
+    font-family: "Poppins", sans-serif;
+}
+
+.Nav .LeftsideNav {
+    gap: 20px;
+}
+
+.LeftsideNav,
+.LeftsideNav .Logo,
+.LeftsideNav .NavItems {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LeftsideNav .Logo {
+    color: #01573e;
+    gap: 8px;
+    font-size: 1.2em;
+    font-weight: 800;
+    cursor: default;
+}
+
+.LeftsideNav .NavItems {
+    list-style-type: none;
+    color: #01573e;
+}
+
+.LeftsideNav .NavItems li {
+    margin: 0 1.1em;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.LeftsideNav .NavItems li:hover {
+    transition: all 600ms ease-in-out;
+}
+
+.Nav .RightsideNav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+.RightsideNav .outlineBtn,
+.RightsideNav .solidBtn {
+    font-size: 0.9em;
+    font-weight: 600;
+    border-radius: 0.5em;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.RightsideNav .outlineBtn {
+    color: #01573e;
+    padding: 0.5em 1em;
+    display: inline-flex;
+    border: 1.55px solid #01573e;
+    align-items: center;
+}
+
+
+.RightsideNav .solidBtn {
+    color: #fbf8ee;
+    background-color: #01573e;
+    padding: 0.6em 2.6em;
+}
+
+
+.RightsideNav .outlineBtn:hover,
+.RightsideNav .solidBtn:hover {
+    transition: all 600ms ease-in-out;
+    box-shadow: 3px 3px 10px #77777785;
+}
+
+.RightsideNav .outlineBtn:hover {
+    background-color: #01573e26;
+}
+
+.RightsideNav .solidBtn:hover {
+    background-color: #01573ede;
+}

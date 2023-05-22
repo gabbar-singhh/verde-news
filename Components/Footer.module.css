@@ -1,0 +1,106 @@
+.Footer {
+    font-family: "Poppins", sans-serif;
+    gap: 5em;
+    background-color: #01573e;
+    padding: 4em 4em 1em 4em;
+}
+
+.Footer .Footer_Top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.LeftsideFoot {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    color: #fff;
+}
+
+.LeftsideFoot .LogoTxt {
+    font-weight: 600;
+    font-size: 2em;
+}
+
+.LeftsideFoot ul {
+    display: flex;
+    list-style-type: none;
+    gap: 1em;
+}
+
+.LeftsideFoot ul li {
+    cursor: pointer;
+}
+
+.LeftsideFoot ul li:hover {
+    text-decoration: underline;
+    transition: all 600ms ease-in-out;
+}
+
+.RightsideFoot {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: #fff;
+    gap: 1em;
+}
+
+.RightsideFoot p {
+    font-size: 0.8em;
+}
+
+.RightsideFoot .Email_CTA {
+    display: flex;
+    justify-content: center;
+}
+
+.RightsideFoot .Email_CTA input {
+    color: #01573e;
+    border: 1.56px solid rgba(192, 192, 192, 0.576);
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    padding: 0.5em 0.8em;
+    outline: none;
+    font-size: 1em;
+}
+
+.RightsideFoot .Email_CTA input::placeholder {
+    color: #01573e;
+    font-size: 0.9em;
+}
+
+.RightsideFoot .Email_CTA button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fbf8ee;
+    background-color: #01573e;
+    font-size: 0.9em;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    padding: 0.8em 1.6em;
+    border-radius: 0;
+    border-bottom-right-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    gap: 5px;
+    cursor: pointer;
+    border: 0.5px solid rgba(192, 192, 192, 0.637);
+}
+
+.RightsideFoot .Email_CTA button:hover {
+    background-color: #01573ede;
+    transition: all 600ms ease-in-out;
+    box-shadow: 3px 3px 10px #77777785;
+}
+
+.Footer_Bottom {
+    margin-top: 5em;
+    padding: 0 4em;
+}
+
+.Footer_Bottom .copyright {
+    color: #fff;
+    text-align: center;
+}

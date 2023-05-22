@@ -1,0 +1,44 @@
+.Main {
+    margin: 0;
+    padding: 0 2em;
+    background-color: #01573e;
+}
+
+.Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    padding: 3em 3em;
+    background-color: #fbf8ee;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.Wrapper .Heading {
+    color: #01573e;
+    font-size: 1.5em;
+    font-weight: 800;
+    cursor: default;
+    text-align: center;
+    align-self: flex-start;
+}
+
+/* FIXME:: Flexibility of a card container */
+.Container {
+    display: flex;
+    gap: 2em;
+    align-content: center;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.Container .card {
+    flex: 0;
+    align-self: flex-start;
+    justify-self: left;
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
