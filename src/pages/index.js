@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "@/styles/Home.module.css";
+import Link from "next/link";
 import dateFormat from "dateformat";
 import PodcastPreview from "../../Components/PodcastPreview";
+import { Tooltip } from "@nextui-org/react";
+import db from "../../firebase";
+import { getDocs, collection } from "firebase/firestore/lite";
+import SuggestionCard from "../../Components/SuggestionCard";
+import topnews from "./topnews";
 
 export default function Home() {
   const now = new Date();
@@ -12,9 +17,55 @@ export default function Home() {
     date: dateFormat(now, "mediumDate"),
     time: dateFormat("shortTime"),
   });
+
+  const [topnewsData, setTopnewsData] = useState([]);
+
+  const [wildlifeData, setWildlifeData] = useState([]);
+
   const submitBtnHandler = () => {};
 
   const emailChangeHadler = () => {};
+
+  useEffect(() => {
+    const getTopNews = () => {
+      const dataArr = [];
+
+      try {
+        const querySnapshot = getDocs(collection(db, "topnews"));
+
+        querySnapshot.forEach((doc) => {
+          dataArr.push(doc.data());
+          // console.log('👈👉', doc.data());
+        });
+      } catch (error) {
+        console.error("Error retrieving data from Firestore: ", error);
+      }
+
+      const latestData = dataArr
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .slice(0, 3);
+
+      setTopnewsData(latestData);
+    };
+
+    const getWildlifeNews = () => {
+      const dataArr = [];
+
+      try {
+        const querySnapshot = getDocs(collection(db, "wildlife"));
+
+        querySnapshot.forEach((doc) => {
+          dataArr.push(doc.data());
+        });
+      } catch (error) {
+        console.error("Error retrieving data from Firestore: ", error);
+      }
+
+      setWildlifeData(dataArr);
+    };
+
+    getTopNews();
+  }, []);
 
   return (
     <>
@@ -66,12 +117,27 @@ export default function Home() {
         </section>
 
         <section className={styles.Previews}>
-          <div className={styles.Topnews_Preview}></div>
+          <div className={styles.Topnews_Preview}>
+            <Tooltip content="more top news!?">
+              <Link href={`/${"topnews"}`}>
+                <h3 className={styles.Head}>{"TOP NEWS ⬇"}</h3>
+              </Link>
+            </Tooltip>
+
+            <div className={styles.Articles}>
+              {console.log(topnewsData)}
+              <SuggestionCard
+              // src={topnewsData[0].imgSrc}
+              // alt={topnewsData[0].imgAlt}
+              // title={topnewsData[0].title}
+              // tag1={topnewsData[0].tags[0]}
+              />
+            </div>
+          </div>
           <div className={styles.Wildlife_Preview}></div>
         </section>
 
-        <PodcastPreview/>
-        
+        <PodcastPreview />
       </main>
     </>
   );

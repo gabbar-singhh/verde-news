@@ -1,0 +1,69 @@
+.main {
+    width: 330px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main:hover {
+    cursor: pointer;
+}
+
+.main h3 {
+    text-align: left;
+
+}
+
+.main:hover .imgPreview {
+    box-shadow: 5px 5px 0 #fff;
+    transition: all 600ms ease-in-out;
+}
+
+.main:hover .title {
+    text-decoration: underline;
+    transition: all 600ms ease-in-out;
+}
+
+.main .imgPreview {
+    border: 2px solid #fff;
+}
+
+.main .date {
+    font-weight: 600;
+    font-size: 0.8em;
+    text-decoration: none;
+    cursor: default;
+}
+
+.main .title {
+    gap: 8px;
+    font-size: 1.2em;
+    font-weight: 800;
+    cursor: default;
+    text-transform: capitalize;
+    text-align: left;
+}
+
+.main .title:hover {
+    cursor: pointer;
+}
+
+.main .tags {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    margin-top: 0.3em;
+    gap: 7px;
+}
+
+.main .tags span {
+    cursor: default;
+    font-size: 0.7em;
+    font-weight: 600;
+    border: 2px solid #fff;
+    padding: 0.4em 1em;
+    border-radius: 20px;
+}

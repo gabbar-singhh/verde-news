@@ -88,3 +88,28 @@
 }
 
 .HeroSection .Suggestions .suggestion_MoreArticles {}
+
+.Topnews_Preview{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  gap: 1.5em;
+  margin: 0;
+  padding: 2em;
+
+  background-color: #01573e;
+}
+
+.Topnews_Preview .Head{
+  text-align: left;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5em;
+  font-family: "Poppins", sans-serif;
+}
+
+.Topnews_Preview .Head:hover{
+  text-decoration: underline;
+  transition: all 600ms ease-in-out;
+}
